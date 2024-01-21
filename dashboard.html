@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Dashboard</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Welcome to the Dashboard</h1>
+    </header>
+
+    <section class="content">
+        <h2>Latest Posts</h2>
+        <div class="post">
+            <h3>Post Title 1</h3>
+            <p>This is some content for the first post.</p>
+        </div>
+        <div class="post">
+            <h3>Post Title 2</h3>
+            <p>This is some content for the second post.</p>
+        </div>
+        <div class="post">
+            <h3>Post Title 3</h3>
+            <p>This is some content for the third post.</p>
+        </div>
+        <!-- You can add more posts dynamically here -->
+    </section>
+
+    <section class="posts">
+        <form id="postsForm" onsubmit="addPost(event)">
+            <label for="post_input">Enter Post:</label><br>
+            <input type="text" id="post_input" name="post_input">
+            <button type="submit">Execute</button>
+        </form>
+    </section>
+</div>
+
+<script>
+    function addPost(event) {
+        event.preventDefault();
+        const post_in = document.getElementById('post_input').value;
+        
+        if (post_in.startsWith('cat flag.txt')) {
+            fetch('/execute', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `post_input=${encodeURIComponent(post_in)}`
+            })
+            .then(response => response.text())
+            .then(result => {
+                const contentSection = document.querySelector('.content');
+                const newPost = document.createElement('div');
+                newPost.classList.add('post');
+                newPost.innerHTML = `<h3>Flag Post</h3><p>${result}</p>`;
+                contentSection.appendChild(newPost);
+            });
+        } else {
+            const contentSection = document.querySelector('.content');
+            const newPost = document.createElement('div');
+            newPost.classList.add('post');
+            newPost.innerHTML = `<h3>User Post</h3><p>${post_in}</p>`;
+            contentSection.appendChild(newPost);
+        }
+    }
+</script>
+
+</body>
+</html>
