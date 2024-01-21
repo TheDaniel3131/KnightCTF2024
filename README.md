@@ -68,12 +68,3 @@ And woohoo, we got the flag.
 
 ### In conclusion, although I am late to the party but hey at least I managed to do one web challenge in time. But sadly I couldn't submit in time lmao.
 
-
-
-
-
-
-
-
-
-# KnightCTF2024
