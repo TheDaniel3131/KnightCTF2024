@@ -8,7 +8,7 @@ You will see the classic vulnerable login page. And immediately I taught of usin
 
 https://github.com/payloadbox/sql-injection-payload-list
 
-![Login Page](blob:https://i.imgur.com/dDPPwg2.png)
+[Login Page](https://i.imgur.com/dDPPwg2.png)
 
 Inserted both username and password with this payload:
 ```
@@ -19,7 +19,7 @@ And click login.
 
 #### After that, you will see this dashboard page. 
 
-![Dashboard Page](blob:https://i.imgur.com/6q7YtRc.png)
+[Dashboard Page](https://i.imgur.com/6q7YtRc.png)
 
 The reason I know there is a dashboard page is because I inspect element the source codes which are provided. You can refer to the index, script.js and style.css for viewing.
 
@@ -64,8 +64,7 @@ so I excited copy and paste it to the post and execute it right away.
 
 And woohoo, we got the flag.
 
-![Flag Secured](blob:https://i.imgur.com/zDuzEjK.png)
-
+[Flag Secured](https://i.imgur.com/zDuzEjK.png)
 
 ### In conclusion, although I am late to the party but hey at least I managed to do one web challenge in time. But sadly I couldn't submit in time lmao.
 
